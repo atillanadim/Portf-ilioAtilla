@@ -12,8 +12,11 @@
 
 </head>
 <body>
-    <header>
+    <header class="bottom-menu">
         <nav id="menu">
+            <div class="logo">
+                <img src="nobglogo.png" alt="Logo" style="height: 90px;">
+            </div>
             <ul>
                 <li>About</li>
                 <li>Projects</li>
@@ -24,12 +27,8 @@
     
     <section class="hero">
         <!-- Canvas do Spline ocupando toda a hero section -->
-
-      
         <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/30DzD6JamNILOMe2/scene.splinecode"></spline-viewer>
-
-       
-        <div id="loader">Carregando...</div>
+        
     </section>
     
     <section class="work">
@@ -62,41 +61,20 @@
         <h2 id="your">Your</h2>
         <div class="disk"><img src="image.png" alt=""><h2 id="ideas">Ideas</h2></div>
     </section>
-
+    <!--<footer style="text-align: center; padding: 2rem; background-color: #000; color: white;">
+        <p style="margin-bottom: 0.5rem;">Made by:</p>
+        <a href="https://seuportifolio.com" target="_blank" style="display: inline-block;">
+          <img src="nobglogo.png" alt="Atilla Nadim Logo" style="height: 80px;">
+        </a>
+      </footer>-->
+    
+ 
     <script src="js.js"></script>
     
-    <!-- Script para inicializar o Spline -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const loader = document.getElementById('loader');
-          const spline = document.querySelector('spline-viewer');
-      
-          if (!spline || !loader) {
-            console.error("Spline ou Loader não encontrado.");
-            return;
-          }
-      
-          loader.style.display = 'flex';
-          loader.style.opacity = '1';
-      
-          // DEBUG: log se o spline foi encontrado
-          console.log("Esperando carregar spline...");
-      
-          spline.addEventListener('scene-loaded', () => {
-            console.log("EVENTO scene-loaded DISPARADO! ✅");
-      
-            setTimeout(() => {
-              loader.style.opacity = '0';
-              setTimeout(() => {
-                loader.style.display = 'none';
-              }, 500); // espera o fade-out
-            }, 2000); // espera 2 segundos
-          });
-        });
-      </script>
+   
       
       
-      
+    
       
 </body>
 </html>

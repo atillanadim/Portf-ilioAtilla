@@ -8,20 +8,121 @@
 
 body {
   font-family: "Azeret Mono", monospace;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #000000;
+  color: #ffffff;
   overflow-x: hidden;
 }
 
-/* NAV */
-header {
+/* Menu fixo na parte inferior */
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000;
+  z-index: 1000;
+  font-family: "Azeret Mono", monospace;
+  border-top: 1px solid #222;
+  padding: 10px 20px;
+}
+
+/* Estilo para o nav dentro do header */
+#menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Container para o logo à esquerda */
+#menu .logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+/* Ajuste para a imagem do logo */
+#menu .logo img {
+  height: 60px; /* Reduzido um pouco para não ficar muito grande no menu inferior */
+  display: block;
+}
+
+/* Lista de itens do menu */
+#menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  flex: 1; /* Ocupa todo o espaço disponível */
+  padding: 0;
+  margin: 0;
+}
+
+#menu ul li {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+#menu ul li:hover {
+  color: #aaaaaa;
+}
+
+/* Adiciona padding na parte inferior do conteúdo para evitar que seja coberto pelo menu */
+body {
+  padding-bottom: 80px; /* Ajuste conforme a altura do seu menu */
+}
+
+/* Responsividade para o menu inferior */
+@media (max-width: 768px) {
+  .bottom-menu {
+    padding: 8px 15px;
+  }
+  
+  #menu .logo img {
+    height: 50px;
+  }
+  
+  #menu ul {
+    overflow-x: auto;
+    -ms-overflow-style: none;  /* IE e Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  #menu ul::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+  }
+  
+  #menu ul li {
+    font-size: 14px;
+    margin: 0 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* NAV header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 20px;
   z-index: 1000;
-}
+
+} */
+
 
 nav ul {
   display: flex;
@@ -32,7 +133,7 @@ nav ul {
 
 nav ul li {
   cursor: pointer;
-  font-size: 18px;
+  font-size: 29px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -56,12 +157,20 @@ nav ul li {
 /* Estilo para o loader */
 #loader {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
   color: white;
-  font-size: 24px;
-  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
 }
 
 .work {
