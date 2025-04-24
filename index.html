@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.85/build/spline-viewer.js"></script>
+ 
+
 </head>
 <body>
     <header>
@@ -20,15 +23,13 @@
     </header>
     
     <section class="hero">
-        <div class="hero-content">
-            <div class="text">
-                <h1 id="title">Hi, I'm Atilla</h1>
-                <p id="subtitle">Creative developer. I love design websites and turning that into code.</p>
-            </div>
-            <div class="avatar">
-                <img src="erasebg-transformed.png" alt="Atilla Cartoon">
-            </div>
-        </div>
+        <!-- Canvas do Spline ocupando toda a hero section -->
+
+      
+        <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/30DzD6JamNILOMe2/scene.splinecode"></spline-viewer>
+
+       
+        <div id="loader">Carregando...</div>
     </section>
     
     <section class="work">
@@ -36,8 +37,8 @@
             <h2 id="projects">Projects</h2>
             <div class="project-slider-container">
                 <div class="project-info">
-                    <h2 id="project-title">Elden ring repository</h2>
-                    <p id="project-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus aliquam accusamus ex, labore sapiente eveniet quasi laboriosam? Architecto, voluptatum, voluptas ad ullam necessitatibus similique, ipsum consectetur alias tempora dolorum ex?</p>
+                    <h2 id="project-title">TRAVEL SENIO</h2>
+                    <p id="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus nulla, sagittis ac hendrerit ultrices at. Vivamus lobortis sapien maximus, felis aliquam.</p>
                 </div>
                 <div class="project-slider">
                     <!-- As imagens serão adicionadas via JavaScript -->
@@ -63,6 +64,39 @@
     </section>
 
     <script src="js.js"></script>
+    
+    <!-- Script para inicializar o Spline -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const loader = document.getElementById('loader');
+          const spline = document.querySelector('spline-viewer');
+      
+          if (!spline || !loader) {
+            console.error("Spline ou Loader não encontrado.");
+            return;
+          }
+      
+          loader.style.display = 'flex';
+          loader.style.opacity = '1';
+      
+          // DEBUG: log se o spline foi encontrado
+          console.log("Esperando carregar spline...");
+      
+          spline.addEventListener('scene-loaded', () => {
+            console.log("EVENTO scene-loaded DISPARADO! ✅");
+      
+            setTimeout(() => {
+              loader.style.opacity = '0';
+              setTimeout(() => {
+                loader.style.display = 'none';
+              }, 500); // espera o fade-out
+            }, 2000); // espera 2 segundos
+          });
+        });
+      </script>
+      
+      
+      
+      
 </body>
 </html>
-

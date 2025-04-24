@@ -1,5 +1,8 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger)
+
+
 
     // Animações existentes
     gsap.from("#menu", {
@@ -46,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     repeat: -1,
     ease: "none",
     })
+
 
     // Dados dos projetos
     const projects = [

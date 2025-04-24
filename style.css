@@ -37,50 +37,44 @@ nav ul li {
   text-transform: uppercase;
 }
 
+/* Hero section modificada para o Spline */
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   height: 100vh;
-}
-.hero-content {
-  display: flex;
-  align-items: center;
-  background: #ff7f32;
-  padding: 40px;
-  border-radius: 10px;
   position: relative;
-}
-.text {
-  max-width: 400px;
-}
-h1 {
-  font-size: 42px;
-  margin-top: 10px;
+  overflow: hidden;
+  background-color: #000; /* Fundo preto para evitar flash branco durante o carregamento */
 }
 
-p {
-  font-size: 17.4px;
-  margin-top: 10px;
+/* Canvas do Spline ocupando 100% da hero section */
+#canvas3d {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
-.avatar img {
-  width: 450px;
-  height: auto;
-  margin-left: 25px;
+
+/* Estilo para o loader */
+#loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  z-index: 10;
 }
 
 .work {
-  margin-top: -100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   padding: 50px 0;
 }
 
 .projects {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,40 +91,42 @@ p {
 }
 
 .project-slider-container {
-    width: 100%;
-    display: flex;
-    flex-direction: row; /* Alterado para row para layout de duas colunas */
-    position: relative;
-    gap: 40px;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row; /* Alterado para row para layout de duas colunas */
+  position: relative;
+  gap: 40px;
+  align-items: center;
 }
 
 .project-info {
-    width: 40%;
+  width: 40%; /* Reduzido para 40% para dar espaço ao slider */
   padding: 20px;
   color: #ffffff;
-  margin-bottom: 40px;
-  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #project-title {
   font-size: 28px;
   margin-bottom: 20px;
   color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 #project-description {
   font-size: 16px;
   line-height: 1.6;
   color: #ffffff;
-  max-width: 600px;
 }
 
 .project-slider {
-    width: 60%;
-    height: 500px;
-    position: relative;
-    perspective: 10000px;
+  width: 60%; /* Aumentado para 60% */
+  height: 400px;
+  position: relative;
+  perspective: 1000px;
 }
 
 .project-card {
@@ -158,7 +154,7 @@ p {
   width: 100%;
   padding: 20px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-  color: rgb(0, 0, 0);
+  color: white;
   font-size: 24px;
 }
 
@@ -170,7 +166,7 @@ p {
   padding: 20px 0;
   position: relative;
   font-size: 24px;
-  top: -50px;
+  top: 110px;
 }
 .tech-stack {
   display: flex;
@@ -185,6 +181,16 @@ p {
 }
 
 @media (max-width: 768px) {
+  .project-slider-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project-info,
+  .project-slider {
+    width: 100%;
+  }
+
   .project-slider {
     height: 300px;
   }
@@ -201,4 +207,3 @@ p {
     font-size: 14px;
   }
 }
-
