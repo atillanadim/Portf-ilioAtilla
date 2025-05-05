@@ -25,19 +25,44 @@
         </nav>
     </header>
     
-    <section class="hero">
-        <!-- Canvas do Spline ocupando toda a hero section -->
+   <!-- <section class="hero">
+        
         <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/30DzD6JamNILOMe2/scene.splinecode"></spline-viewer>
         
-    </section>
+    </section> -->
     
+    <div class="creative">
+                <p > Creative Developer.</p>
+    </div>
+    <section class="section-1">
+        <section class="about">
+            <div id="about-description">
+                <p>Desenvolvedor <span>web</span> apaixonado por transformar ideias em experiências digitais envolventes.
+                    Com um olhar apurado para <span>UI/UX</span> e uma verdadeira paixão por design de interfaces, meu trabalho vai além do código: busco criar soluções visualmente impactantes, intuitivas e funcionais. <br></p>
+            </div>
+            <br>
+          
+        </section>
+    </section> 
+      
+    <section class="section-2 reveal-section">Seção 2</section>
+    <div class="text-wrapper">
+                <div class="text-line original">web</div>
+                <div class="text-line hover">web</div>
+            </div>
+    <section class="section-3 reveal-section">Seção 3</section>
+    <section class="section-4 reveal-section">Seção 4</section>
+
+ 
+
+  
     <section class="work">
         <div class="projects">
             <h2 id="projects">Projects</h2>
             <div class="project-slider-container">
                 <div class="project-info">
-                    <h2 id="project-title">TRAVEL SENIO</h2>
-                    <p id="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus nulla, sagittis ac hendrerit ultrices at. Vivamus lobortis sapien maximus, felis aliquam.</p>
+                    <h2 id="project-title"></h2>
+                    <p id="project-description"></p>
                 </div>
                 <div class="project-slider">
                     <!-- As imagens serão adicionadas via JavaScript -->
@@ -45,6 +70,8 @@
             </div>
         </div>
     </section>
+    
+   
 
     <section class="technologies">
         <div class="tech-stack">
@@ -53,14 +80,15 @@
             <span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span><span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span> <span>Next.js</span> <span>Python</span> <span>Figma</span> <span>Spline</span>
             <span>Figma</span> <span>HTML</span> <span>CSS</span> <span>JS</span><span>Spline</span>
              <span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span><span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span> <span>Next.js</span> <span>Python</span> <span>Figma</span> <span>Spline</span>
+            <span>Figma</span> <span>HTML</span> <span>CSS</span> <span>JS</span><span>Spline</span> <span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span><span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span> <span>Next.js</span> <span>Python</span> <span>Figma</span> <span>Spline</span>
+            <span>Figma</span> <span>HTML</span> <span>CSS</span> <span>JS</span><span>Spline</span>
+            <span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span><span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span> <span>Next.js</span> <span>Python</span> <span>Figma</span> <span>Spline</span>
+            <span>Figma</span> <span>HTML</span> <span>CSS</span> <span>JS</span><span>Spline</span>
+             <span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span><span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span> <span>Next.js</span> <span>Python</span> <span>Figma</span> <span>Spline</span>
             <span>Figma</span> <span>HTML</span> <span>CSS</span> <span>JS</span><span>Spline</span>
         </div>
     </section>
-    <section class="ideas">
-        <h2 id="digitalize">Digitalize</h2>
-        <h2 id="your">Your</h2>
-        <div class="disk"><img src="image.png" alt=""><h2 id="ideas">Ideas</h2></div>
-    </section>
+   
     <!--<footer style="text-align: center; padding: 2rem; background-color: #000; color: white;">
         <p style="margin-bottom: 0.5rem;">Made by:</p>
         <a href="https://seuportifolio.com" target="_blank" style="display: inline-block;">
@@ -70,7 +98,39 @@
     
  
     <script src="js.js"></script>
+    <script>
+       gsap.registerPlugin(ScrollTrigger);
+        const wrapper = document.querySelector('.text-wrapper');
+        const original = wrapper.querySelector('.original');
+        const hover = wrapper.querySelector('.hover');
     
+        wrapper.addEventListener('mouseenter', () => {
+          gsap.to(original, { y: "-100%", duration: 0.2, ease: "power2.out" });
+          gsap.to(hover, { y: "-100%", duration: 0.2, ease: "power2.out" });
+        });
+    
+        wrapper.addEventListener('mouseleave', () => {
+          gsap.to(original, { y: "0%", duration: 0.4, ease: "power2.in" });
+          gsap.to(hover, { y: "0%", duration: 0.4, ease: "power2.in" });
+        });
+
+
+     
+
+    // Aplica a animação em todas as seções com a classe .reveal-section
+    document.querySelectorAll(".reveal-section").forEach(section => {
+      gsap.from(section, {
+        yPercent: 100,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",  // quando o topo da section encosta na parte de baixo da tela
+          end: "top top",        // até chegar ao topo
+          scrub: true,
+        }
+      });
+    });
+      </script>
    
       
       

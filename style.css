@@ -173,6 +173,98 @@ nav ul li {
   pointer-events: none;
 }
 
+.creative{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px;
+  font-size: 250px;
+  
+}
+
+
+
+
+
+
+
+
+section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  color: white;
+}
+
+.section-1 { background: #111; }
+.section-2 { background: orange; color: black; }
+.section-3 { background: #1e90ff; }
+.section-4 { background: #32cd32; }
+
+.reveal-section {
+  z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+.text-wrapper {
+
+  display: inline-block;
+  overflow : hidden;
+
+  height: 200px; /* importante: define a "janela" do texto */
+}
+
+.text-line {
+
+
+  color: white;
+  font-size: 10rem;
+  font-weight: bold;
+  text-align: center;
+  transform: translateY(0%);
+}
+
+.text-line.hover {
+  transform: translateY(100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .work {
   display: flex;
   align-items: center;
