@@ -1,5 +1,12 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Initialize ScrollTrigger
+  ScrollTrigger.config({
+    // Improve performance by reducing refresh rate
+    autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
+    // Prevent scroll jank
+    ignoreMobileResize: true
+  });
     gsap.registerPlugin(ScrollTrigger)
 
 
@@ -12,44 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power2.out",
     })
 
-    gsap.from("#title", {
-    y: 50,
-    opacity: 0,
-    duration: 1.5,
-    delay: 0.8,
-    ease: "power2.out",
-    })
-
-    gsap.from("#subtitle", {
-    y: 50,
-    opacity: 0,
-    duration: 1.5,
-    delay: 1,
-    ease: "power2.out",
-    })
-
-    gsap.from(".avatar img", {
-    opacity: 0,
-    x: 50,
-    duration: 1.2,
-    delay: 1.5,
-    ease: "power2.out",
-    })
-
-    gsap.from(".hero-content", {
-    opacity: 0,
-    y: 50,
-    duration: 1.5,
-    ease: "power2.out",
-    })
-
-    gsap.to(".tech-stack span", {
-    x: "-1000px",
-    duration: 10,
-    repeat: -1,
-    ease: "none",
-    })
-
+  
 
     // Dados dos projetos
     const projects = [

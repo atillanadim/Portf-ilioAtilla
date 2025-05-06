@@ -7,56 +7,71 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.85/build/spline-viewer.js"></script>
  
 
 </head>
 <body>
-    <header class="bottom-menu">
-        <nav id="menu">
-            <div class="logo">
-                <img src="nobglogo.png" alt="Logo" style="height: 90px;">
-            </div>
-            <ul>
-                <li>About</li>
-                <li>Projects</li>
-                <li>Contact</li>
-            </ul>
-        </nav>
-    </header>
-    
-   <!-- <section class="hero">
-        
-        <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/30DzD6JamNILOMe2/scene.splinecode"></spline-viewer>
-        
-    </section> -->
-    
-    <div class="creative">
-                <p > Creative Developer.</p>
-    </div>
-    <section class="section-1">
-        <section class="about">
-            <div id="about-description">
-                <p>Desenvolvedor <span>web</span> apaixonado por transformar ideias em experiências digitais envolventes.
-                    Com um olhar apurado para <span>UI/UX</span> e uma verdadeira paixão por design de interfaces, meu trabalho vai além do código: busco criar soluções visualmente impactantes, intuitivas e funcionais. <br></p>
-            </div>
-            <br>
-          
-        </section>
-    </section> 
-      
-    <section class="section-2 reveal-section">Seção 2</section>
-    <div class="text-wrapper">
-                <div class="text-line original">web</div>
-                <div class="text-line hover">web</div>
-            </div>
-    <section class="section-3 reveal-section">Seção 3</section>
-    <section class="section-4 reveal-section">Seção 4</section>
-
  
-
+    
   
-    <section class="work">
+    <!-- Loader -->
+ <!-- Loader -->
+    <div class="loader-screen">
+        <div class="loader-line"></div>
+    </div>
+  
+  <!-- Cortinas -->
+  <div class="curtain-left"></div>
+  <div class="curtain-right"></div>
+  
+  <!-- Hero Section -->
+<section class="section hero">
+    <div class="creative">
+        <p class="type-text">Creative Developer.</p>
+    </div> 
+</section>
+    
+<section class="section about">
+    <div class="about-header">
+        <h1>About <span class="about-deco">ABOUT</span><span class="about-deco">ABOUT</span><span class="about-deco">ABOUT</span></h1>
+      <p class="tagline">
+        CREATIVE DEVELOPER AND CAT LOVER
+      </p>
+    </div>
+  
+    <div class="about-content">
+      <div class="text">
+        <p>I’m a creative developer currently based in Porto, Portugal...</p>
+        <p>I create websites, design systems, and interactive digital experiences.</p>
+  
+        <p><strong>NOW</strong><br>Read more about <a href="#">what I’ve been focused on recently →</a></p>
+        <p><strong>AVAILABILITY</strong><br>I’m still taking on freelance projects...</p>
+        <p><strong>CONTACT</strong><br>Most active via <a href="mailto:">email</a>. Also check out <a href="#">my resume</a>.</p>
+      </div>
+  
+      <div class="image">
+        <img src="knight.png" alt="Pixel art knight" />
+      </div>  
+     
+  
+      <div class="social-box">
+        <h3>ELSEWHERE</h3>
+        <ul>
+          <li><a href="#" class="social-link">GitHub</a></li>
+          <li><a href="#" class="social-link">LinkedIn</a></li>
+          <li><a href="#" class="social-link">Dev.to</a></li>
+          <!-- ... -->
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+ 
+ 
+    <section class="section work">
+        <section class="work reveal-section">
         <div class="projects">
             <h2 id="projects">Projects</h2>
             <div class="project-slider-container">
@@ -69,26 +84,13 @@
                 </div>
             </div>
         </div>
+        </section>
     </section>
+   
     
    
 
-    <section class="technologies">
-        <div class="tech-stack">
-            <span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span><span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span> <span>Next.js</span> <span>Python</span> <span>Figma</span> <span>Spline</span>
-            <span>Figma</span> <span>HTML</span> <span>CSS</span> <span>JS</span><span>Spline</span>
-            <span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span><span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span> <span>Next.js</span> <span>Python</span> <span>Figma</span> <span>Spline</span>
-            <span>Figma</span> <span>HTML</span> <span>CSS</span> <span>JS</span><span>Spline</span>
-             <span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span><span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span> <span>Next.js</span> <span>Python</span> <span>Figma</span> <span>Spline</span>
-            <span>Figma</span> <span>HTML</span> <span>CSS</span> <span>JS</span><span>Spline</span> <span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span><span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span> <span>Next.js</span> <span>Python</span> <span>Figma</span> <span>Spline</span>
-            <span>Figma</span> <span>HTML</span> <span>CSS</span> <span>JS</span><span>Spline</span>
-            <span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span><span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span> <span>Next.js</span> <span>Python</span> <span>Figma</span> <span>Spline</span>
-            <span>Figma</span> <span>HTML</span> <span>CSS</span> <span>JS</span><span>Spline</span>
-             <span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span><span>HTML</span> <span>CSS</span> <span>JS</span> <span>React</span> <span>Next.js</span> <span>Python</span> <span>Figma</span> <span>Spline</span>
-            <span>Figma</span> <span>HTML</span> <span>CSS</span> <span>JS</span><span>Spline</span>
-        </div>
-    </section>
-   
+  
     <!--<footer style="text-align: center; padding: 2rem; background-color: #000; color: white;">
         <p style="margin-bottom: 0.5rem;">Made by:</p>
         <a href="https://seuportifolio.com" target="_blank" style="display: inline-block;">
@@ -99,38 +101,142 @@
  
     <script src="js.js"></script>
     <script>
-       gsap.registerPlugin(ScrollTrigger);
-        const wrapper = document.querySelector('.text-wrapper');
-        const original = wrapper.querySelector('.original');
-        const hover = wrapper.querySelector('.hover');
-    
-        wrapper.addEventListener('mouseenter', () => {
-          gsap.to(original, { y: "-100%", duration: 0.2, ease: "power2.out" });
-          gsap.to(hover, { y: "-100%", duration: 0.2, ease: "power2.out" });
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
+     // ===== PERFORMANCE OPTIMIZATIONS =====
+    // Configure ScrollTrigger for better performance
+    ScrollTrigger.config({
+        autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
+        ignoreMobileResize: true,
+    }, {});
+
+        // HOVER ANIMATION
+        document.addEventListener("DOMContentLoaded", () => {
+          const wrapper = document.querySelector('.text-wrapper');
+          if (wrapper) {
+            const original = wrapper.querySelector('.original');
+            const hover = wrapper.querySelector('.hover');
+        
+            wrapper.addEventListener('mouseenter', () => {
+              gsap.to(original, { y: "-100%", duration: 0.2, ease: "power2.out" });
+              gsap.to(hover, { y: "-100%", duration: 0.2, ease: "power2.out" });
+            });
+        
+            wrapper.addEventListener('mouseleave', () => {
+              gsap.to(original, { y: "0%", duration: 0.4, ease: "power2.in" });
+              gsap.to(hover, { y: "0%", duration: 0.4, ease: "power2.in" });
+            });
+          }
+        
         });
-    
-        wrapper.addEventListener('mouseleave', () => {
-          gsap.to(original, { y: "0%", duration: 0.4, ease: "power2.in" });
-          gsap.to(hover, { y: "0%", duration: 0.4, ease: "power2.in" });
-        });
+          // PAGE LOAD ANIMATION
+          const loader = document.querySelector('.loader-screen');
+          const loaderLine = document.querySelector('.loader-line');
+          const curtainLeft = document.querySelector('.curtain-left');
+          const curtainRight = document.querySelector('.curtain-right');
+          const creative = document.querySelector('.creative');
+          const text = document.querySelector('.type-text');
+          
+          if (text && creative) {
+            const content = text.textContent;
+            text.textContent = ''; // limpa texto antes de digitar
+        
+            const tl = gsap.timeline();
+        
+            // 1. Loader Line grow
+            tl.to(loaderLine, {
+              width: "100%",
+              duration: 3.5,
+              ease: "power2.inOut"
+            })
+        
+            // 2. Esconde loader e inicia cortina
+            .to(loader, {
+              opacity: 0,
+              duration: 0.4,
+              onComplete: () => {
+                loader.style.display = "none";
+              }
+            })
+        
+            .to([curtainLeft, curtainRight], {
+              width: 0,
+              duration: 1,
+              ease: "power2.inOut",
+              stagger: 0.1
+            }, "<")
+        
+            // 3. Mostra hero section e digita o texto
+            .set(creative, { visibility: "visible" })
+            .to(text, {
+              text: content,
+              duration: 2,
+              ease: "none",
+              delay: 0.2,
+              onStart: () => {
+                text.style.borderRight = "2px solid white";
+              },
+              onComplete: () => {
+                text.style.borderRight = "none";
+                
+                // FIXED: Force about section to proper position after text animation
+                gsap.to(".about", {
+                  y: 0,
+                  duration: 0.1,
+                  ease: "none"
+                });
+              }
+            });
+          }
+        
+         
+         
+          const sections = gsap.utils.toArray(".section");
 
+          sections.forEach((section,i) => {
+            const next = sections[i + 1];
+            if (!next) return;
 
-     
-
-    // Aplica a animação em todas as seções com a classe .reveal-section
-    document.querySelectorAll(".reveal-section").forEach(section => {
-      gsap.from(section, {
-        yPercent: 100,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: section,
-          start: "top bottom",  // quando o topo da section encosta na parte de baixo da tela
-          end: "top top",        // até chegar ao topo
-          scrub: true,
-        }
-      });
-    });
-      </script>
+            ScrollTrigger.create({
+              trigger: next,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+              pin: section,
+              pinSpacing: false,
+            });
+          });
+        
+          // FIXED: Modified tech carousel to toggle sticky state
+          function initTechCarousel() {
+            // Horizontal scrolling animation
+            gsap.to(".tech-stack", {
+            xPercent: -50,
+            repeat: -1,
+            duration: 20,
+            ease: "linear"
+            });
+            
+            // Detect when to add sticky class
+            ScrollTrigger.create({
+              trigger: ".about",
+              start: "bottom top",
+              end: "top bottom",
+              onEnter: () => {
+                document.querySelector(".technologies").classList.add("sticky");
+              },
+              onLeaveBack: () => {
+                document.querySelector(".technologies").classList.remove("sticky");
+              }
+            });
+          }
+        
+          // Initialize animations
+          initAboutAnimations();
+          initTechCarousel();
+        
+          // Project slider functionality
+          // (keep your existing project slider code here)
+    </script>
    
       
       

@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Young+Serif&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -7,10 +8,10 @@
 }
 
 body {
-  font-family: "Azeret Mono", monospace;
+  font-family: "Azeret Mono", monospace,"Sansation", sans-serif, "Crimson Text", serif, "Young Serif", serif;
   background-color: #000000;
   color: #ffffff;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Menu fixo na parte inferior */
@@ -23,9 +24,18 @@ body {
   z-index: 1000;
   font-family: "Azeret Mono", monospace;
   border-top: 1px solid #222;
-  padding: 10px 20px;
+  padding: 2px 3px;
+  
 }
-
+.bottom-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 20px;
+}
 /* Estilo para o nav dentro do header */
 #menu {
   display: flex;
@@ -103,27 +113,7 @@ body {
     margin: 0 15px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-/* NAV header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  z-index: 1000;
-
-} */
-
-
+  
 nav ul {
   display: flex;
   justify-content: center;
@@ -138,98 +128,74 @@ nav ul li {
   text-transform: uppercase;
 }
 
-/* Hero section modificada para o Spline */
-.hero {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-  background-color: #000; /* Fundo preto para evitar flash branco durante o carregamento */
-}
-
-/* Canvas do Spline ocupando 100% da hero section */
-#canvas3d {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* Estilo para o loader */
-#loader {
-  position: absolute;
+.loader-screen {
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
   width: 100%;
   height: 100%;
-  background-color: #000;
-  color: white;
+  background: black;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  opacity: 1;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
 }
 
-.creative{
+.loader-line {
+  height: 4px;
+  background: white;
+  width: 0%;
+}
+
+.curtain-left, .curtain-right {
+  position: fixed;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: black;
+  z-index: 9998;
+}
+
+.curtain-left { left: 0; }
+.curtain-right { right: 0; }
+
+/* FIXED: Adjusted creative section to eliminate extra space */
+.creative {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 100vh;
-  padding: 50px;
-  font-size: 250px;
+  height: -60vh; /* Changed to fixed height instead of min-height */
+  padding: 30px;
+  font-size: 270px;
+  position: relative;
+  z-index: 1;
+  background-color:#000000; /* Ensure background is black */
+  margin-bottom: 0; /* Ensure no margin at bottom */
+  overflow: hidden; /* Hide any overflow */
   
 }
 
-
-
-
-
-
-
-
-section {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  color: white;
+.type-text {
+  margin: 0; /* Remove any default margin */
+  
 }
-
-.section-1 { background: #111; }
-.section-2 { background: orange; color: black; }
-.section-3 { background: #1e90ff; }
-.section-4 { background: #32cd32; }
-
-.reveal-section {
-  z-index: 2;
-}
-
-
-
-
-
-
-
-
 
 .text-wrapper {
-
   display: inline-block;
-  overflow : hidden;
-
-  height: 200px; /* importante: define a "janela" do texto */
+  overflow: hidden;
+  height: 200px;
 }
 
 .text-line {
-
-
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 10rem;
   font-weight: bold;
-  text-align: center;
   transform: translateY(0%);
 }
 
@@ -239,54 +205,254 @@ section {
 
 
 
+section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
 
 
+/* *  */
+.about {
+  background: white;
+  color: black;
+  padding: 4rem 2rem;
+  font-family: serif;
+  position: relative;
+  min-height: 100vh;
+}
+
+.about-header h1 {
+  font-size: 10rem;
+  font-family: "Crimson Text", serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* espaço entre os dois textos */
+}
+
+.about-deco {
+  font-size: 10rem;
+  color: #dddddd;
+  opacity: 0.2;
+  font-family: "Crimson Text", serif;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+.about-header .tagline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ccc;
+  margin-top: -1rem;
+  padding-bottom: 0.5rem;
+  color: #777;
+  font-style: italic;
+}
+
+.about-content {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
 
 
+.about-content .text {
+  flex: 1;
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
+.about-content .text strong {
+  display: block;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 26px;
+}
+
+.about-content .image {
+  flex: 1;
+  max-width: 50vw;
+  margin-left: auto;
+  padding-right: 2rem;
+  
+}
+
+.about-content .image img {
+  width: 100%;
+  image-rendering: pixelated;
+  height: auto;
+}
 
 
+.social-box a{
+  text-decoration: none;
+  color: #090000;
+}
+.social-box h3{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: normal;
+  color:#777
+}
+.social-box {
+  position: absolute;
+  right: 30px;
+  bottom: 0.3rem;
+  background: white;
+  border: 1px solid #000;
+  padding: 30px;
+  font-size: 20px;
+  box-shadow: 5px 5px 0 #000;
+}
+.social-link {
+  position: relative;
+  display: inline-block;
+  color: #aaaaaa;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
 
+.social-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: transparent;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease;
+}
 
+.social-link:hover {
+  color: #666666; /* cinza claro ao passar o mouse */
+}
 
+.social-link:hover::after {
+  background-color: #666666; /* linha horizontal aparece */
+}
 
+ul
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#me {
+  font-size: 2rem;
+  line-height: 1.4;
+}
 
+#me span {
+  color: #000000;
+  font-weight: bold;
+}
 
+/* Pinboard para a lista "Find Me" */
+.pinboard {
+  flex: 1;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0; /* Inicialmente invisível para a animação */
+}
 
+.pinboard h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
+.pinboard ul {
+  list-style: none;
+  padding: 0;
+}
 
+.pinboard ul li {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 
+.pinboard ul li:hover {
+  color: #aaaaaa;
+}
 
+/* FIXED: Fixed technologies section positioning */
+.technologies {
+  padding: 40px 0;
+  margin-top: 0; /* Removed negative margin */
+  position: relative;
+  z-index: 3;
+  background-color: #ffffff; /* Match with about section */
+}
 
+.tech-stack {
+  display: flex;
+  white-space: nowrap;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
+.tech-stack span {
+  display: inline-block;
+  padding: 10px 30px;
+  color: black;
+}
 
+/* Sticky tech section */
+.technologies.sticky {
+  position: sticky;
+  top: 0;
+  background-color: #000000;
+  z-index: 4;
+  padding: 20px 0;
+  height: 80px;
+}
 
-
-
-
-
+.technologies.sticky .tech-stack span {
+  color: white;
+}
 
 .work {
   display: flex;
+  font-family: "Azeret Mono", monospace;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 100vh;
-  padding: 50px 0;
+  height: 100vh;
+  padding: 30px 0;
 }
 
 .projects {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #000000;
-  padding: 40px;
+  padding: 50px;
   overflow: hidden;
 }
 
 #projects {
   color: #ffffff;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   font-size: 32px;
   align-self: flex-start;
 }
@@ -294,14 +460,14 @@ section {
 .project-slider-container {
   width: 100%;
   display: flex;
-  flex-direction: row; /* Alterado para row para layout de duas colunas */
+  flex-direction: row;
   position: relative;
   gap: 40px;
   align-items: center;
 }
 
 .project-info {
-  width: 40%; /* Reduzido para 40% para dar espaço ao slider */
+  width: 40%;
   padding: 20px;
   color: #ffffff;
   display: flex;
@@ -324,7 +490,7 @@ section {
 }
 
 .project-slider {
-  width: 60%; /* Aumentado para 60% */
+  width: 60%;
   height: 400px;
   position: relative;
   perspective: 1000px;
@@ -359,26 +525,29 @@ section {
   font-size: 24px;
 }
 
-.technologies {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  padding: 20px 0;
-  position: relative;
-  font-size: 24px;
-  top: 110px;
-}
-.tech-stack {
-  display: flex;
-  gap: 30px;
-  white-space: nowrap;
-  font-size: bold;
-  text-transform: uppercase;
-}
-.tech-stack span {
-  display: inline-block;
-  padding: 10px 20px;
+/* Responsividade */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+  }
+  
+  #about-description, .pinboard {
+    width: 100%;
+  }
+  
+  .about {
+    padding: 80px 30px;
+    margin-top: -30vh; /* Adjusted for mobile */
+  }
+  
+  #me {
+    font-size: 1.5rem;
+  }
+
+  .creative {
+    height: 40vh; /* Smaller on mobile */
+    font-size: 80px; /* Smaller font on mobile */
+  }
 }
 
 @media (max-width: 768px) {
