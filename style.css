@@ -12,6 +12,7 @@ body {
   background-color: #000000;
   color: #ffffff;
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  height: 100%;
 }
 
 /* Menu fixo na parte inferior */
@@ -83,10 +84,7 @@ body {
   color: #aaaaaa;
 }
 
-/* Adiciona padding na parte inferior do conteúdo para evitar que seja coberto pelo menu */
-body {
-  padding-bottom: 80px; /* Ajuste conforme a altura do seu menu */
-}
+
 
 /* Responsividade para o menu inferior */
 @media (max-width: 768px) {
@@ -216,10 +214,12 @@ section {
 .about {
   background: white;
   color: black;
-  padding: 4rem 2rem;
+  padding: 3rem 1.5rem;
   font-family: serif;
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  padding-bottom: 20  rem;
+
 }
 
 .about-header h1 {
@@ -231,7 +231,7 @@ section {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 20px; /* espaço entre os dois textos */
+  gap: 10px; /* espaço entre os dois textos */
 }
 
 .about-deco {
@@ -256,17 +256,23 @@ section {
 
 .about-content {
   display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-top: 1rem;
   align-items: flex-start;
   justify-content: space-between;
 }
 
 
 .about-content .text {
-  flex: 1;
-  font-size: 1.8rem;
-  line-height: 1.3;
+  flex: 2;
+  font-family:"Crimson Text",serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-top: 50px;
+  margin-left: 70px;
+}
+.about-content .text a {
+ cursor: pointer;
 }
 
 .about-content .text strong {
@@ -274,7 +280,7 @@ section {
   margin-top: 1.5rem;
   font-weight: bold;
   letter-spacing: 1px;
-  font-size: 26px;
+  font-size: 22px;
 }
 
 .about-content .image {
@@ -289,6 +295,13 @@ section {
   width: 100%;
   image-rendering: pixelated;
   height: auto;
+}
+#official {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-top: 1rem;
+  color: #666666;
+  font-weight: bold;
 }
 
 
@@ -431,54 +444,80 @@ ul
 
 .work {
   display: flex;
-  font-family: "Azeret Mono", monospace;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
   height: 100vh;
-  padding: 30px 0;
+  background: white;
+  color: black;
+  padding: 4rem 2rem;
+  font-family: serif;
+  position: relative;
+  align-items: center;
+  box-sizing: border-box;
+  
 }
+#advise{
+  margin-top: 5px;
+  margin-right: 1500px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+ 
+
 
 .projects {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: #000000;
-  padding: 50px;
-  overflow: hidden;
+  gap: 2rem;
 }
 
 #projects {
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 60px;
   font-size: 32px;
   align-self: flex-start;
 }
 
 .project-slider-container {
-  width: 100%;
   display: flex;
-  flex-direction: row;
-  position: relative;
-  gap: 40px;
-  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: flex-start;
 }
 
 .project-info {
-  width: 40%;
-  padding: 20px;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex: 1;
+  font-family: "Crimson Text", serif;
+  font-size: 19px;
+  line-height: 1.6;
+}
+.project-info h2 {
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.project-info p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.project-slider {
+  flex: 2;
+  max-width: 50vw;
+  margin-left: auto;
+  padding-right: 2rem;
+  height: auto;
 }
 
 #project-title {
   font-size: 28px;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #000000;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -486,11 +525,11 @@ ul
 #project-description {
   font-size: 16px;
   line-height: 1.6;
-  color: #ffffff;
+  color: #000000;
 }
 
 .project-slider {
-  width: 60%;
+  width: 70%;
   height: 400px;
   position: relative;
   perspective: 1000px;
@@ -500,7 +539,7 @@ ul
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.5s ease, opacity 0.5s ease;
