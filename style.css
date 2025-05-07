@@ -9,8 +9,8 @@
 
 body {
   font-family: "Azeret Mono", monospace,"Sansation", sans-serif, "Crimson Text", serif, "Young Serif", serif;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
   overflow-x: hidden; /* Prevent horizontal scrolling */
   height: 100%;
 }
@@ -160,27 +160,47 @@ nav ul li {
 
 /* FIXED: Adjusted creative section to eliminate extra space */
 .creative {
+  position: relative;
+  z-index: 2; /* Para garantir que fique sobre a imagem */
   font-family: "Young Serif", serif;
   font-weight: 400;
   font-style: normal;
-  visibility: hidden;
+  font-size: clamp(3rem, 12vw, 12rem); /* Responsivo */
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: -60vh; /* Changed to fixed height instead of min-height */
-  padding: 30px;
-  font-size: 270px;
-  position: relative;
-  z-index: 1;
-  background-color:#000000; /* Ensure background is black */
-  margin-bottom: 0; /* Ensure no margin at bottom */
-  overflow: hidden; /* Hide any overflow */
+  text-align: left;
+  color: black;
   
+}
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0 40px; /* Um pouco de respiro lateral */
+}
+.image-hero{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0.15; /* Deixa mais suave, você pode ajustar ou remover */
+}
+
+.image-hero img{
+  width: 50vw; /* Bem grande, ocupa quase toda a largura */
+  max-width: 1000px; /* Máximo para não estourar em telas grandes */
+  height: auto;
+  object-fit: contain;
 }
 
 .type-text {
-  margin: 0; /* Remove any default margin */
+  margin: 0;
+  z-index: 2; /* Remove any default margin */
   
 }
 
@@ -244,6 +264,43 @@ section {
   line-height: 1;
 }
 
+
+/*Animação dos titulos*/
+
+.about-header {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.about-title {
+  font-size: 10rem;
+  font-family: "Crimson Text", serif;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.strong-word {
+  color: black;
+  font-weight: 700;
+}
+
+.light-word {
+  color: #ddd; /* tom claro */
+  font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
 .about-header .tagline {
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -258,7 +315,7 @@ section {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -266,10 +323,12 @@ section {
 .about-content .text {
   flex: 2;
   font-family:"Crimson Text",serif;
-  font-size: 1.5rem;
-  line-height: 1.2;
-  margin-top: 50px;
-  margin-left: 70px;
+  font-size: 1.3rem;
+  line-height: 0.8;
+  margin-top: 40px;
+  margin-left: 90px;
+  padding: 4rem;
+  
 }
 .about-content .text a {
  cursor: pointer;
@@ -285,16 +344,20 @@ section {
 
 .about-content .image {
   flex: 1;
-  max-width: 50vw;
-  margin-left: auto;
-  padding-right: 2rem;
-  
+  max-width: 90vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 0;
+  margin-right: -23px;
 }
 
-.about-content .image img {
+.image img {
   width: 100%;
   image-rendering: pixelated;
   height: auto;
+  max-width: 100%;
+  object-fit: contain;
 }
 #official {
   font-size: 18px;
@@ -318,13 +381,13 @@ section {
 }
 .social-box {
   position: absolute;
-  right: 30px;
-  bottom: 0.3rem;
+  right: 100px;
+  bottom: 6.1rem;
   background: white;
   border: 1px solid #000;
   padding: 30px;
   font-size: 20px;
-  box-shadow: 5px 5px 0 #000;
+  box-shadow: 6px 6px 0 #000;
 }
 .social-link {
   position: relative;
@@ -443,16 +506,26 @@ ul
 }
 
 .work {
-  display: flex;
+  
   height: 100vh;
   background: white;
   color: black;
-  padding: 4rem 2rem;
+  padding: 1rem;
   font-family: serif;
   position: relative;
-  align-items: center;
   box-sizing: border-box;
+  align-items: center;
+  width: 100vw;
   
+}
+
+.work .about-title h1{
+  font-family: "Crimson Text", serif;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espaço entre os dois textos */
+
 }
 #advise{
   margin-top: 5px;
@@ -472,6 +545,7 @@ ul
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  max-width: 100%;
 }
 
 #projects {
@@ -494,6 +568,7 @@ ul
   font-family: "Crimson Text", serif;
   font-size: 19px;
   line-height: 1.6;
+  margin-right: 3rem;
 }
 .project-info h2 {
   font-size: 26px;

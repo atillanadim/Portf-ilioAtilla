@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const projects = [
     {
         id: 1,
-        title: "Elden ring repository",
+        title: "Elden Ring Repository",
         description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus aliquam accusamus ex, labore sapiente eveniet quasi laboriosam? Architecto, voluptatum, voluptas ad ullam necessitatibus similique, ipsum consectetur alias tempora dolorum ex?",
         image: "/source/elden ring repository.png",
@@ -39,28 +39,28 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
         id: 3,
-        title: "SeiorMente",
+        title: "SeniorMente",
         description:
         "Um site de comércio eletrônico completo com sistema de pagamento integrado e gerenciamento de produtos.",
         image: "/source/seniormente.png", // Substitua pela imagem real
     },
     {
         id: 4,
-        title: "Blog Pessoal",
+        title: "Pet Adoptian Site Idea",
         description:
         "Blog com sistema de gerenciamento de conteúdo personalizado e design responsivo para compartilhar ideias e projetos.",
         image: "/source/adote.png", // Substitua pela imagem real
     },
     {
         id: 5,
-        title: "Blog Pessoal",
+        title: "Portfolio Lydia Styles",
         description:
         "Blog com sistema de gerenciamento de conteúdo personalizado e design responsivo para compartilhar ideias e projetos.",
         image: "/source/lydiastyles.png", // Substitua pela imagem real
     },
     {
         id: 6,
-        title: "Blog Pessoal",
+        title: "Web Course Plataform",
         description:
         "Blog com sistema de gerenciamento de conteúdo personalizado e design responsivo para compartilhar ideias e projetos.",
         image: "/source/curso.png", // Substitua pela imagem real
